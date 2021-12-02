@@ -5,6 +5,7 @@ import com.example.restcrud.repositories.UserRoleRepository;
 import com.example.restcrud.user.User;
 import com.example.restcrud.user.UserCreateRequest;
 import com.example.restcrud.user.UserRole;
+import com.example.restcrud.user.UserUpdateRequest;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
@@ -51,6 +52,19 @@ public class UserController {
         user.setRole(role);
         user.setCreatedAt(new Date());
 
+        return userRepository.save(user);
+    }
+
+    @PutMapping("/{id}")
+    @ResponseBody
+    public User updateUser(@PathVariable Long id, @RequestBody @Valid UserUpdateRequest request){
+        User user = userRepository.findById(id).orElseThrow(() ->
+                new IllegalArgumentException("No such user found"));
+        UserRole role = userRoleRepository.findById(request.getRoleId()).orElseThrow(() ->
+                new IllegalArgumentException("No such role found"));
+
+        user.setRole(role);
+        user.setName(request.getName());
         return userRepository.save(user);
     }
 }

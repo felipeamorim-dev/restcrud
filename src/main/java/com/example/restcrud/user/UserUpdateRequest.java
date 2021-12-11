@@ -12,6 +12,7 @@ import java.io.Serializable;
 @Setter
 @NoArgsConstructor
 public class UserUpdateRequest implements Serializable {
+    private static final long serialVersionUID = 1L;
 
     @NotNull
     private Long roleId;

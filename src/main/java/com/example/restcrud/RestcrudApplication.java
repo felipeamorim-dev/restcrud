@@ -1,4 +1,4 @@
-package com.example.restcrud.app;
+package com.example.restcrud;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;

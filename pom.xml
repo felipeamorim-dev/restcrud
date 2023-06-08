@@ -84,13 +84,6 @@
 						</exclude>
 					</excludes>
 				</configuration>
-				<configuration>
-					<propertiesEncoding>UTF-8</propertiesEncoding>
-					<nonFilteredFileExtensions>
-					    <nonFilteredFileExtension>xls</nonFilteredFileExtension>
-					    <nonFilteredFileExtension>xlsx</nonFilteredFileExtension>
-					</nonFilteredFileExtensions>
-    				</configuration>
 			</plugin>
 			<plugin>
 			    <groupId>org.apache.maven.plugins</groupId>
